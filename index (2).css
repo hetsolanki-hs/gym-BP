@@ -1,0 +1,215 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#ffffff;
+    color:#0a1f44;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #eee;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+.logo span{
+    color:#1e4dd8;
+}
+
+.nav-links a{
+    color:#0a1f44;
+    text-decoration:none;
+    margin-left:30px;
+    font-weight:500;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    width:0;
+    height:2px;
+    background:#1e4dd8;
+    transition:.3s;
+}
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ================= HERO ================= */
+.hero{
+    min-height:100vh;
+    padding:120px 20px 60px;
+    background:
+    linear-gradient(120deg, rgba(30,77,216,.15), rgba(255,255,255,.9)),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-box{
+    background:rgba(255,255,255,0.9);
+    padding:60px;
+    border-radius:22px;
+    max-width:700px;
+    width:100%;
+    box-shadow:0 20px 60px rgba(10,31,68,.2);
+}
+
+.hero h1{
+    font-size:56px;
+    line-height:1.1;
+}
+
+.hero p{
+    margin:20px 0;
+    color:#333;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:14px 40px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#0a1f44,#1e4dd8);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ================= GLASS SECTIONS ================= */
+.glass{
+    max-width:900px;
+    margin:100px auto;
+    padding:60px 40px;
+    text-align:center;
+    border-radius:25px;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(14px);
+    box-shadow:0 15px 40px rgba(10,31,68,.15);
+}
+
+.glass h2{
+    margin-bottom:20px;
+}
+
+.reveal-text{
+    opacity:0;
+    font-size:18px;
+    line-height:1.8;
+    color:#333;
+}
+
+/* ================= CLICK ANIMATIONS ================= */
+.reveal-left .reveal-text{
+    transform:translateX(-120px);
+}
+.reveal-left:target .reveal-text{
+    opacity:1;
+    transform:translateX(0);
+    transition:.8s ease;
+}
+
+.reveal-zoom .reveal-text{
+    transform:scale(.6);
+}
+.reveal-zoom:target .reveal-text{
+    opacity:1;
+    transform:scale(1);
+    transition:.7s ease;
+}
+
+.reveal-bottom .reveal-text{
+    transform:translateY(120px);
+}
+.reveal-bottom:target .reveal-text{
+    opacity:1;
+    transform:translateY(0);
+    transition:.8s ease;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+    background:#0a1f44;
+    color:#fff;
+    text-align:center;
+    padding:18px;
+    font-size:14px;
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+/* TABLET */
+@media(max-width:992px){
+    .navbar{
+        padding:15px 40px;
+    }
+    .hero h1{
+        font-size:42px;
+    }
+    .glass{
+        margin:80px 20px;
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .navbar{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav-links a{
+        margin:0 12px;
+        font-size:15px;
+    }
+
+    .hero-box{
+        padding:40px 25px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .glass{
+        padding:40px 25px;
+    }
+
+    .reveal-text{
+        font-size:16px;
+    }
+}
+
+/* SMALL MOBILE */
+@media(max-width:480px){
+    .hero h1{
+        font-size:28px;
+    }
+    .hero-btn{
+        padding:12px 30px;
+        font-size:14px;
+    }
+}
